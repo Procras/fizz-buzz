@@ -1,13 +1,10 @@
 def fizzbuzz(n)
-  fizz, buzz = (n%3 == 0), (n%5 == 0)
-  fizz_string, buzz_string = 'fizz', 'buzz'
-  if fizz && buzz
-    "#{fizz_string}#{buzz_string}"
-  elsif fizz
-    "#{fizz_string}"
-  elsif buzz
-    "#{buzz_string}"
-  else
-    n
+  fizz = (n % 3 == 0)
+  buzz = (n % 5 == 0)
+  case
+  when fizz && buzz then 'fizzbuzz'
+  when fizz then 'fizz'
+  when buzz then 'buzz'
+  else n
   end
 end
